@@ -1,18 +1,18 @@
 ---
 template: default.html
-title: Input Add-ons
-excerpt: Creating full-width, fluid input/button pairs has been impossible for most of the history of CSS. With Flexbox it couldn't be easier.
+title: input附加组件
+excerpt: 使用以往的CSS，创建一个全屏的、自适应的输入/按钮组件对是不可能的。有了Flexbox，这变得非常的简单。
 ---
 
-Because of the way input sizing works in CSS, it's almost impossible to append or prepend another element to it and have the input field behave fluidly and take up the remaining space.
+由于CSS中input尺寸的作用机制，我们几乎不可能为它附加或预先考虑另一个元素并使输入区域自适应以及填充剩余空间。
 
-The only existing way to do this is to either know the exact width of the input, or to use something like `display:table-cell`, which has its own set of problems, most notably the difficulty with positioning anything absolutely inside of the add-on in certain browsers.
+现在解决这个问题的方法，要么就是知道这个input输入框的确定宽度，要么就是使用如`display:table-cell`之类的属性，然而这些方法都有它们各自的问题。最值得注意的是，在某些浏览器中，把某些元素精确定位在附加组件里面是非常困难的。
 
-With Flexbox, all these problems go away, and the code is trivially simple. In addition, you get the input field and the input add-on to be the same height for free.
+有了Flexbox，这些问题都解决了，而且代码非常的简单。另外，你可以轻松地实现输入框和附加组件的等高布局。
 
 <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
   <div class="Grid-cell">
-    <h2>Add-on Prepended</h2>
+    <h2>前面插入的附加组件</h2>
     <div class="InputAddOn">
       <span class="InputAddOn-item">Amount</span>
       <input class="InputAddOn-field">
@@ -23,7 +23,7 @@ With Flexbox, all these problems go away, and the code is trivially simple. In a
     </div>
   </div>
   <div class="Grid-cell">
-    <h2>Add-on Appended</h2>
+    <h2>后面插入的附加组件</h2>
     <div class="InputAddOn">
       <input class="InputAddOn-field">
       <button class="InputAddOn-item">Go</button>
@@ -35,7 +35,7 @@ With Flexbox, all these problems go away, and the code is trivially simple. In a
   </div>
 </div>
 
-## Appended and Prepended Add-ons
+## 两边插入的附加组件
 
 <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
   <div class="Grid-cell">
@@ -54,7 +54,7 @@ With Flexbox, all these problems go away, and the code is trivially simple. In a
   </div>
 </div>
 
-## The HTML
+## HTML
 
 ```html
 <!-- appending -->
@@ -77,7 +77,7 @@ With Flexbox, all these problems go away, and the code is trivially simple. In a
 </div>
 ```
 
-## The CSS
+## CSS
 
 ```css
 .InputAddOn {
@@ -95,4 +95,4 @@ With Flexbox, all these problems go away, and the code is trivially simple. In a
 
 ```
 
-View the full [source](https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/input-add-on.css) for the `InputAddOn` component used in this demo on Github.
+在github中查看使用了input附加组件的例子的所有[源码](https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/input-add-on.css)。

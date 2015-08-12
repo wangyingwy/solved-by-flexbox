@@ -1,33 +1,33 @@
 ---
 template: default.html
-title: Better, Simpler Grid Systems
-excerpt: Flexbox gives us most of the features we want from a grid system out of the box. And sizing and alignment are just one or two properties away.
+title: 更好, 更简单的栅格系统
+excerpt: Flexbox带给我们那些绝大部分我们希望从一个栅格系统中开箱即用的特性。另外，尺寸和对齐只是一两个属性而已。
 ---
 
-Most grid systems today use one of two layout methods: `float` or `inline-block`. But neither of these methods were really intended to be used for layout and as a result have pretty significant problems and limitations.
+如今，大部分的栅格系统会使用如下两种布局方式：float或者inline-block。然而，这些并不是真正用于解决布局问题的方式，因此，它们往往会产生许多重大的问题和限制。
 
-Using floats requires clearing them which has a whole host of layout issues, most notoriously that clearing an element sometimes forces it below an unrelated part of the page (take this [Bootstrap issue](https://github.com/twbs/bootstrap/issues/295#issuecomment-2282969) for example). In addition, clearing floats usually requires using both before and after pseudo-elements, preventing you from using them for something else.
+使用浮动，我们需要处理相当一部分的布局问题，最臭名昭著的就是，清除浮动有时候不得不影响到页面中该元素下面一个不相关的部分（我们以[这个问题](https://github.com/twbs/bootstrap/issues/295#issuecomment-2282969)作为例子）。此外，清除浮动通常需要用到before和after伪元素来阻止你使用别的东西。
 
-Inline block layouts must address the problem of [white-space between inline-block items](http://css-tricks.com/fighting-the-space-between-inline-block-elements/), and all of the [solutions](http://davidwalsh.name/remove-whitespace-inline-block) to that problem are [hacky](https://github.com/suitcss/grid/blob/master/grid.css#L44-L45) and [annoying](https://twitter.com/thierrykoblentz/status/305152267374428160).
+Inline block布局必须解决[两个inline-block元素之间产生空白](http://css-tricks.com/fighting-the-space-between-inline-block-elements/)这一问题, 而且所有的这些[解决方法](http://davidwalsh.name/remove-whitespace-inline-block)都非常[麻烦](https://github.com/suitcss/grid/blob/master/grid.css#L44-L45)和[讨人厌](https://twitter.com/thierrykoblentz/status/305152267374428160)。
 
-Flexbox not only eliminates these problems, it opens up an entirely new world of possibilities.
+Flexbox不仅解决了这些问题，它还开辟了一条可以通往全新世界的道路。
 
-## Features of a Flexbox Grid System
+## Features网格系统的特性
 
-Grid systems usually come with a myriad of sizing options, but the vast majority of the time you just want two or three elements side-by-side. Given this, why should we be required to put sizing classes on every single cell?
+网格系统通常会伴随着很多调整选项，然而，绝大多数时候，你只需要两到三个元素并排显示。鉴于这种情况，为什么我们还有需要为每一个网格单元添加类名来定义尺寸呢？
 
-Listed below are some of my criteria for an ideal grid system. Fortunately, with Flexbox we get most of these features for free.
+下面是我对于一个理想的网格系统的一些标准条件。幸运的是，有了Flexbox，我们能自由地使用绝大部分的特性。
 
-- By default, each grid cell is the same width and height as every other cell in the row. Basically they all size to fit by default.
-- For finer control, you can add sizing classes to individual cells. Without these classes, the cells simply divide up the available space as usual.
-- For responsive grids, you can add media query-specific classes to the cells.
-- Individual cells can be aligned vertically to the top, bottom, or middle.
-- When you want all of the cells in a grid to have the same sizing, media, or alignment values, you should be able to just add a single class to the container to avoid unnecessary repetition.
-- Grids can be nested as many levels deep as needed.
+- 默认情况下，同一行中的每一个网格单元都等宽登高。基本上他们都适合默认大小。
+- 为了更好地控制网格单元，你可以为特定的网格单元添加类名用于定义尺寸。在没有这些类名的情况下，网格单元会像往常一样简单地划分页面上的可用空间。
+- 对于响应式的网格，你可以为网格单元添加类名用于特定的媒体查询。
+- 特定的网格单元可以在顶部，底部或者中间垂直对齐。
+- 当你希望栅格中所有的网格单元拥有相同的大小，媒体或校准值，你仅仅需要为其父元素添加一个类名去避免不必要的重复。
+- 网格可以用于深层面的嵌套。
 
-### Basic Grids
+### 基本网格
 
-The grid cells below do not specify any widths, they just naturally space themselves equally and expand to fit the entire row. They're also equal height by default.
+下面这些网格单元并没有指定宽度，他们只是自然地扩展本身的空间已适应整个行。此外，他们也是默认的等高布局。
 
 <div class="Grid Grid--gutters u-textCenter">
   <div class="Grid-cell">
@@ -68,7 +68,7 @@ The grid cells below do not specify any widths, they just naturally space themse
 <div class="Grid Grid--gutters Grid--flexCells">
   <div class="Grid-cell">
     <div class="Demo">
-      Full-height, even when my content doesn't fill the space.
+      全高度，即使我的内容没有填满整个空间
     </div>
   </div>
 
@@ -79,11 +79,11 @@ The grid cells below do not specify any widths, they just naturally space themse
   </div>
 </div>
 
-### Individual Sizing
+### 个体大小
 
-When equal widths aren't what you want, you can add sizing classes to individual cells. Cells without sizing classes simply divide up the remaining space as normal.
+当你不希望设置等宽布局的时候，你可以添加一个类名来定义特定尺寸的网格单元。其他没有定义该尺寸类名的网格单元会均等分割剩余空间。
 
-The cells below labeled "auto" do not have sizing classes specified.
+下面标注着“auto”的网格单元没有添加特定的尺寸类名。
 
 <div class="Grid Grid--gutters u-textCenter">
   <div class="Grid-cell u-1of2">
@@ -118,11 +118,11 @@ The cells below labeled "auto" do not have sizing classes specified.
   </div>
 </div>
 
-### Responsive
+### 响应式
 
-Responsive Grids work by adding media classes to the Grid cells or containers. When those media values are met, the grids automatically adjust accordingly.
+通过为网格单元或者容器添加媒体类名来实现响应式网格。当浏览器尺寸适配媒体值的时候，相应的网格自动调整。
 
-The cells below should be full width by default and scaled to fit above `48em`. Resize your browser to see them in action.
+下面的网格单元默认的情况下是完整的宽度，当屏幕尺寸缩小超过一半的时候会进行缩放。调整你的浏览器大小去动态地观察它们的变化。
 
 <div class="Grid Grid--gutters Grid--full large-Grid--fit u-textCenter">
   <div class="Grid-cell">
@@ -144,9 +144,9 @@ The cells below should be full width by default and scaled to fit above `48em`. 
   </div>
 </div>
 
-### Grid-ception
+### 网格异常
 
-Grid components are infinitely nestable inside of other grid components.
+网格组件可以无限地嵌套在其他的网格组件中
 
 <div class="Grid Grid--gutters Grid--flexCells u-textCenter">
   <div class="Grid-cell">
@@ -175,14 +175,14 @@ Grid components are infinitely nestable inside of other grid components.
   </div>
 </div>
 
-## Alignment Features
+## 对齐特性
 
-### Top-aligned Grid Cells
+### 顶部对齐的网格单元
 
 <div class="Grid Grid--gutters Grid--top">
   <div class="Grid-cell">
     <div class="Demo">
-      This cell should be top-aligned.
+      这个网格会被顶部对齐
     </div>
   </div>
   <div class="Grid-cell u-1of2">
@@ -192,17 +192,17 @@ Grid components are infinitely nestable inside of other grid components.
   </div>
   <div class="Grid-cell">
     <div class="Demo">
-      This cell should be top-aligned.
+      这个网格会被顶部对齐
     </div>
   </div>
 </div>
 
-### Bottom-aligned Grid Cells
+### 底部对齐的网格单元
 
 <div class="Grid Grid--gutters Grid--bottom">
   <div class="Grid-cell">
     <div class="Demo">
-      This cell should be bottom-aligned.
+      这个网格会被底部对齐
     </div>
   </div>
   <div class="Grid-cell">
@@ -212,17 +212,17 @@ Grid components are infinitely nestable inside of other grid components.
   </div>
   <div class="Grid-cell">
     <div class="Demo">
-      This cell should be bottom-aligned.
+      这个网格会被底部对齐
     </div>
   </div>
 </div>
 
-### Vertically Centered Grid Cells
+### 垂直居中的网格单元
 
 <div class="Grid Grid--gutters Grid--center">
   <div class="Grid-cell">
     <div class="Demo">
-      This cell should be vertically-centered with the cell to its right.
+      这个网格会基于它右边的网格垂直居中对齐
     </div>
   </div>
   <div class="Grid-cell">
@@ -231,12 +231,12 @@ Grid components are infinitely nestable inside of other grid components.
   </div>
 </div>
 
-### Mixed Vertical Alignment
+### 混合垂直对齐
 
 <div class="Grid Grid--gutters">
   <div class="Grid-cell Grid-cell--top">
     <div class="Demo">
-      This cell should be top aligned.
+      这个网格单元会被顶部对齐
     </div>
   </div>
   <div class="Grid-cell">
@@ -245,17 +245,17 @@ Grid components are infinitely nestable inside of other grid components.
   </div>
   <div class="Grid-cell Grid-cell--center">
     <div class="Demo">
-      This cell should be center-aligned.
+      这个网格单元会被居中对齐
     </div>
   </div>
   <div class="Grid-cell Grid-cell--bottom">
     <div class="Demo">
-      This cell should be bottom-aligned.
+      这个网格单元会被底部对齐
     </div>
   </div>
 </div>
 
-## The HTML
+## HTML
 
 ```html
 <div class="Grid">
@@ -265,9 +265,9 @@ Grid components are infinitely nestable inside of other grid components.
 </div>
 ```
 
-## The CSS
+## CSS
 
-### Basic Grid Styles
+### 基本网格样式
 
 ```css
 .Grid {
@@ -279,7 +279,7 @@ Grid components are infinitely nestable inside of other grid components.
 }
 ```
 
-### Grid Style Modifiers
+### 网格样式修饰
 
 ```css
 /* With gutters */
@@ -313,7 +313,7 @@ Grid components are infinitely nestable inside of other grid components.
 }
 ```
 
-### Responsive Modifiers (a mobile-first approach)
+### 响应式修饰（移动端优先的方法）
 
 ```css
 /* Base classes for all media */
@@ -372,4 +372,4 @@ Grid components are infinitely nestable inside of other grid components.
 }
 ```
 
-View the full [source](https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/grid.css) for the `Grid` component used in this demo on Github.
+在github中查看使用了这个网格组件的例子的完整[源码](https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/grid.css) 。

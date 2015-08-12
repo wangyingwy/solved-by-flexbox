@@ -1,26 +1,26 @@
 ---
 template: holy-grail.html
-title: Holy Grail Layout
-excerpt: This classic problem has been challenging CSS hackers for years, yet none of the historical solutions have fully solved it. With Flexbox, it's finally possible.
+title: 圣杯布局
+excerpt: 多年来，许多程序员都挑战过圣杯布局这个经典的问题，然而没有任何一个解决方法能够完全解决它。用flexbox，它最终成为了可能。
 ---
 
-The [Holy Grail Layout](http://en.wikipedia.org/wiki/Holy_Grail_(web_design)) is a classic CSS problem with various solutions presented over time. If you're unfamiliar with the history of the Holy Grail layout, this [A List Apart article](http://alistapart.com/article/holygrail) offers a pretty good summary and links to a few of the more well-known solutions.
+随着时间的推移，人们提出了各种解决方案来解决[圣杯布局](http://en.wikipedia.org/wiki/Holy_Grail_(web_design))这一经典问题。 如果你不了解圣杯布局的历史，这个[文章列表](http://alistapart.com/article/holygrail)提供了一个很好的总结，而且它列举了一些著名的解决方案的链接。
 
-At its core, the Holy Grail Layout is a page with a header, footer, and three columns. The center column contains the main content, and the left and right columns contain supplemental content like ads or navigation.
+在其核心，圣杯布局是一种拥有页头，页脚和三栏的页面布局。中间的一栏包含着主要的内容，左右两栏包含着补充内容，如广告或者导航。
 
-Most CSS solutions to this problem aim to meet a few goals:
+针对圣杯布局，大多数CSS解决方案是为了解决以下目标：
 
-- They should have a fluid center with fixed-width sidebars.
-- The center column (main content) should appear first in the HTML source.
-- All columns should be the same height, regardless of which column is actually the tallest.
-- They should require minimal markup.
-- The footer should "stick" to the bottom of the page when content is sparse.
+- 它们要有一个自适应的中间栏和固定宽度的侧边栏。
+- 中间栏（主要内容）要首先出现在html代码里面。
+- 无论实际上哪一栏是最高的，所有的部分都应该实现等高布局。
+- 它们应该需要最小的标记。
+- 在内容较少的情况下，页脚应该固定在页面的底部。
 
-Unfortunately, because of the nature of these goals and the original limitations of CSS, none of the classic solutions to this problem were ever able to satisfy all of them.
+不幸的是，由于这些目标的性质以及CSS的局限性，没有任何经典解决方案能够完全满足圣杯布局的目标。
 
-With Flexbox, a complete solution is finally possible.
+伴随着Flexbox的出现，一个完整的解决方法最终成为了可能。
 
-## The HTML
+## HTML
 
 ```html
 <body class="HolyGrail">
@@ -34,9 +34,9 @@ With Flexbox, a complete solution is finally possible.
 </body>
 ```
 
-## The CSS
+## CSS
 
-Getting the center content row to stretch and the footer to stick to the bottom is solved with the same technique shown in the [Sticky Footer](../sticky-footer/) example. The only difference is the center row of the Holy Grail layout (`.HolyGrail-body`) needs to be `display:flex` in order to properly arrange its children.
+这里使用的方法与[固定页脚]例子中(../sticky-footer/)的相同，从而使中间内容可拉伸以及使页脚固定在页面底部。唯一的不同之处在于，为了正确排列子元素，圣杯布局的中间行(`.HolyGrail-body`)需要设置`display:flex`。
 
 ```css
 .HolyGrail {
@@ -51,7 +51,7 @@ Getting the center content row to stretch and the footer to stick to the bottom 
 }
 ```
 
-Styling three equal-height columns with a fluid center and fixed-width sidebars is just as easy:
+要设置一个中间自适应侧边栏固定宽度的三栏等高布局就是这么简单：
 
 ```css
 .HolyGrail-content {
@@ -69,13 +69,13 @@ Styling three equal-height columns with a fluid center and fixed-width sidebars 
 }
 ```
 
-### Being Responsive
+### 成为响应式布局
 
-The Holy Grail layout came from an era of Web design when pretty much everyone was browsing on a computer. But with the increasing number of mobile devices and the rising popularity of responsive design, the Holy Grail layout has gone mostly out of fashion.
+圣杯布局诞生于一个几乎每个人都使用电脑来浏览网页的时代。但是，随着移动设备越来越多的出现以及逐渐普及的响应式设计，圣杯布局已经过时了。
 
-Either way, with Flexbox, creating a mobile-first and mobile-friendly version of the Holy Grail layout is easy. The gist is to simply make the center section `flex-direction:column` by default and then `flex-direction:row` for larger screens.
+不管怎样，使用Flexbox，我们能够很轻易地创造出一个移动端优先的，在移动端页面中也能友好地呈现的圣杯布局。这个方法的要点，仅仅是在移动端页面中为中间部分内容设置默认的`flex-direction:column`，然后在大屏浏览页面的时候为其设置`flex-direction:row`。
 
-Here's a complete example that is responsive and mobile-first. You can also resize this browser window to see it in action.
+这是一个响应式的，移动端优先的完整的例子。你也可以调整浏览器大小去动态地观察它。
 
 ```css
 .HolyGrail,
@@ -103,4 +103,4 @@ Here's a complete example that is responsive and mobile-first. You can also resi
 }
 ```
 
-View the full [source](https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/holy-grail.css) for the `HolyGrail` component used in this demo on Github.
+在github中查看使用了圣杯布局的例子的完整[源码](https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/holy-grail.css)。

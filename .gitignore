@@ -7,3 +7,5 @@ npm-debug.log
 
 # Static site output
 build
+
+.idea
