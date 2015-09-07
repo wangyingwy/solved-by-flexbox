@@ -16,11 +16,11 @@ excerpt: 使页脚在内容较少的页面中固定在页面底部是非常棘�
 
 使页脚固定在内容较少的页面的底部是几乎所有开发人员在他们的职业生涯中都试图解决的问题。在大多数情况下，这个问题已经解决。然而，[现存的](http://ryanfait.com/resources/footer-stick-to-bottom-of-page/)[解决方案](http://ryanfait.com/resources/footer-stick-to-bottom-of-page/)都有一个很明显的缺点&mdash;在页脚高度不确定的情况下，这些方案都无效。
 
-Flexbox是解决这类型问题的完美方案。While mostly known for laying out content in the horizontal direction, Flexbox actually works just as well for vertical layout problems. All you have to do is wrap the vertical sections in a flex container and choose which ones you want to expand. They'll automatically take up all the available space in their container.
+Flexbox是解决这类型问题的完美方案。虽然页面大多数以水平方向布局内容，但Flexbox同样适合垂直布局问题。你需要做的事情就是用一个弹性盒模型包裹着这些垂直节点，然后选择哪些是需要扩展的节点。他们会在他们的包裹容器里面自动地占满可用的空间。
 
-In the example below, the container is set to the height of the window, and the content area is told to expand as needed. *(Note: in the vertical direction you need to specify a height for the container. This is different from the horizontal direction, which automatically expands to fit.)*
+在下面的例子中，最外层包裹容器设置为窗口的高度，里面的内容区域则按需扩展。*(注意：在垂直方向上，你需要为最外层容器指定一个高度。这不同于水平方向，水平方向会自动地填充宽度。)*
 
-## The HTML
+## HTML
 
 ```xml
 <body class="Site">
@@ -30,7 +30,7 @@ In the example below, the container is set to the height of the window, and the 
 </body>
 ```
 
-## The CSS
+## CSS
 
 ```css
 .Site {
@@ -44,7 +44,7 @@ In the example below, the container is set to the height of the window, and the 
 }
 ```
 
-View the full [source](https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css) for the `Site` component used in this demo on Github.
+在github中查看使用了这个组件的例子的完整[源码](https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/site.css)。
 
 </div>
 

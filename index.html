@@ -35,7 +35,7 @@ template: home.html
 
 <section class="Section">
   <div class="Container">
-    <h2 class="Section-heading">Browser Support</h2>
+    <h2 class="Section-heading">浏览器支持</h2>
 
     <ul class="Grid Grid--guttersLg Grid--justifyCenter">
       <li class="Grid-cell Grid-cell--autoSize">
@@ -70,23 +70,23 @@ template: home.html
       </li>
     </ul>
 
-    <h3 class="Section-heading">Caveats and Known Issues</h3>
+    <h3 class="Section-heading">问题说明</h3>
     <ul class="Section-list">
-      <li>IE 10 has Flexbox support but for a <a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/">draft version</a> of the current spec: (<code>display:flexbox</code>).</li>
-      <li>Safari 6 and earlier support the <a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/">original</a> Flexbox syntax, which is now obsolete: (<code>display:box</code>).</li>
-      <li>Firefox 27 and earlier do not support multi-line flexboxes. See <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=702508">this bug</a> for more details.</li>
-      <li>For a full browser support comparison, check out <a href="http://caniuse.com/flexbox">caniuse.com/flexbox</a></li>
+      <li>IE10支持Flexbox，但当前<a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/">草案</a>的规范中，<code>display:flexbox</code>不支持。</li>
+      <li>Safari 6以及早期的版本支持<a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/">原有的</a>Flexbox语法，比如现在已经过时的<code>display:box</code>。</li>
+      <li>Firefox 27以及早期版本不支持多行的Flexbox。用更多细节查看这个<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=702508">bug</a>。</li>
+      <li>对于所有浏览器的支持情况比较，查看<a href="http://caniuse.com/flexbox">caniuse.com/flexbox</a></li>
     </ul>
   </div>
 </section>
 
 <section class="Section">
   <div class="Container">
-    <h2 class="Section-heading">About the Code</h2>
-    <p>All of the code samples on this site show how to solve a particular design problem with Flexbox. They show just the code that's needed to make the demos work in a spec-compliant browser. Some browsers do not fully comply with the latest version of the spec, so sadly, a few workarounds were necessary.</p>
-    <p>Workarounds for non-compliant browsers are not shown in the code samples, but if you're curious about those implementation details, you can check out the source files. Each demo links to its source, and all browser-specific workarounds are well-documented, so don't be afraid to take a look.</p>
-    <p>The vendor prefixing and translating of current flex properties to their legacy equivalents is all handled by <a href="https://github.com/ai/autoprefixer">autoprefixer</a>. If you're writing Flexbox code and not using autoprefixer, well, you're making a horrible mistake.</p>
-    <p>The class naming convention used in the code samples and source files is taken from <a href="https://github.com/suitcss/suit">SUIT CSS</a>, which is based on BEM methodologies. Each example includes one or more reusable CSS components allowing you to adapt or copy these patterns in to your own projects. Links are provided to their respective components on each example page.</p>
-    <p>If you find a mistake or would like to suggest an additional example, feel free to open an issue or submit a pull request on <a href="https://github.com/philipwalton/solved-by-flexbox">Github</a>.</p>
+    <h2 class="Section-heading">关于代码</h2>
+    <p>这个站点的所有源码展示了如何用Flexbox解决特定的设计问题。这些源码只能运行于现代浏览器。遗憾的是，一些浏览器并不完全遵循最新的规范，所以我们需要使用一些解决方法。</p>
+    <p>源码例子中并没有展现解决兼容问题的方法，但是，假如你对于实现细节有兴趣的话，你可以看看源码的文件。每个例子都提供链接到它们各自的源码，而且所有浏览器的兼容方法都已经写好，大家可以放心地查看。</p>
+    <p>浏览器前缀以及对当前flex属性恰当的处理全部由<a href="https://github.com/ai/autoprefixer">autoprefixer</a>来解决。如果你使用Flexbox而没有很好地使用autoprefixer，那么你的程序将会出现很可怕的错误。</p>
+    <p>源码中class的命名规则来源于<a href="https://github.com/suitcss/suit">SUIT CSS</a>，这是一个基于BEM规范的命名方式。每个例子包括了一个或多个可重用的CSS组件，可以允许你在自己的项目中修改或者复制这些模式。每个例子上面都提供了他们各自的组件的链接。</p>
+    <p>如果你在阅读过程中发现了错误或者希望添加额外的例子，欢迎打开issue或者提交pull request到<a href="https://github.com/philipwalton/solved-by-flexbox">Github</a>上。</p>
   </div>
 </section>
